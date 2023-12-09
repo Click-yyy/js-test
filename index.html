@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+      }
+      #code {
+        width: 100%;
+      }
+      #run {
+        padding: 10px 20px;
+        background: #0bf;
+        border: none;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="code" rows="10" placeholder="Javascript Code"></textarea>
+    <button id="run">Run</button>
+    <script>
+      document.getElementById('run').onclick = () => {
+        var script = document.createElement('script');
+        script.innerHTML = document.getElementById('code').value;
+        document.body.appendChild(script);
+        document.body.removeChild(script);
+      }
+    </script>
+  </body>
+</html>
